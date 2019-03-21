@@ -33,7 +33,7 @@
         <property name="growth" value="182"/>
     </bean>
     <!--Shuttle-->
-    <bean id="Venera" class="Shuttle" >
+    <bean id="Venera" class="Shuttle">
         <property name="name" value="Venera"/>
         <property name="list">
             <list value-type="Astronaut">

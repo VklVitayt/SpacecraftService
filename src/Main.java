@@ -1,6 +1,12 @@
+
+import org.springframework.context.ApplicationContext;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+
+
 import java.time.LocalTime;
+
 
 
 public class Main {
@@ -9,15 +15,15 @@ public class Main {
         main.fly();
     }
 
-    public int randomNumber() {
+    private int randomNumber() {
         int a = 1;
         int b = 3;
         int random_number = a + (int) (Math.random() * b);
         return random_number;
     }
 
-    public void randomShuttle() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+    private void randomShuttle() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
             if (randomNumber() == 1) {
                 Shuttle shuttle = (Shuttle) context.getBean("Venera");
                 System.out.println(shuttle);
@@ -31,7 +37,7 @@ public class Main {
 
     }
 
-    public void fly() throws InterruptedException {
+    private void fly() throws InterruptedException {
         System.out.println("Экипаж шатла сформирован!");
         Thread.sleep(1000);
         randomShuttle();

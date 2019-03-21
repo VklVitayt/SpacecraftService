@@ -1,6 +1,9 @@
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.Set;
 
 public class Shuttle {
+
     private String name;
     private Set shuttle;
 
@@ -14,7 +17,7 @@ public class Shuttle {
 
     @Override
     public String toString() {
-        return "Shuttle{shuttle name=" + name + shuttle +'}'+"\n" ;
+        return "Название шатла:" + name + ". Экипаж шатла:"+shuttle;
     }
 
     public void setName(String name) {
