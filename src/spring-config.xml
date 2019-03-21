@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--Astronaut-->
+    <bean id="1" class="Astronaut" >
+        <property name="name" value="Igor"/>
+        <property name="surname" value="Kabushkov"/>
+        <property name="age" value="20"/>
+        <property name="weight" value="76"/>
+        <property name="growth" value="184"/>
+    </bean>
+    <bean id="2" class="Astronaut" >
+        <property name="name" value="Rodion"/>
+        <property name="surname" value="Medvedev"/>
+        <property name="age" value="20"/>
+        <property name="weight" value="70"/>
+        <property name="growth" value="188"/>
+    </bean>
+    <bean id="3" class="Astronaut" >
+        <property name="name" value="Aleksei"/>
+        <property name="surname" value="Goncharenko"/>
+        <property name="age" value="20"/>
+        <property name="weight" value="75"/>
+        <property name="growth" value="180"/>
+    </bean>
+    <bean id="4" class="Astronaut" >
+        <property name="name" value="Pavel"/>
+        <property name="surname" value="Blinez"/>
+        <property name="age" value="20"/>
+        <property name="weight" value="68"/>
+        <property name="growth" value="182"/>
+    </bean>
+    <!--Shuttle-->
+    <bean id="Venera" class="Shuttle" >
+        <property name="name" value="Venera"/>
+        <property name="list">
+            <list value-type="Astronaut">
+                <ref bean="3" />
+                <ref bean="4" />
+            </list>
+        </property>
+    </bean>
+    <bean id="Avrora" class="Shuttle" >
+        <property name="name" value="Avrora"/>
+        <property name="list">
+            <list value-type="Astronaut">
+                <ref bean="1" />
+                <ref bean="2" />
+            </list>
+        </property>
+    </bean>
+    <bean id="Mars" class="Shuttle" >
+        <property name="name" value="Mars"/>
+        <property name="list">
+            <list value-type="Astronaut">
+                <ref bean="1" />
+                <ref bean="4" />
+            </list>
+        </property>
+    </bean>
+</beans>
